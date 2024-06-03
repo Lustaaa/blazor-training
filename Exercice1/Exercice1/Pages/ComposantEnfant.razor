@@ -1,0 +1,12 @@
+﻿@if (Visible)
+{
+    <h3>ComposantEnfant : @Name</h3>
+
+    <p>@Question</p>
+
+    <button onclick="@(() => Add(true))">Yes</button>
+    <button onclick="@(() => Add(false))">No</button>
+}
+@code {
+
+}
