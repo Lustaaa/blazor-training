@@ -1,5 +1,23 @@
 ﻿<h3>AddMovie</h3>
 
-@code {
-
-}
+<EditForm Model="NewMovie" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+    <div>
+        Titre : <InputText @bind-Value="NewMovie.Title" />
+        <ValidationMessage For="@(() => NewMovie.Title)" />
+    </div> 
+    <div>
+        Realisateur : <InputText @bind-Value="NewMovie.Realisateur" placeholder="Prénom" />
+        <ValidationMessage For="@(() => NewMovie.Realisateur)" />
+    </div>
+    <div>
+        Année de sortie : <InputNumber @bind-Value="NewMovie.AnneeDeSortie" />
+        <ValidationMessage For="@(() => NewMovie.AnneeDeSortie)" />
+    </div>
+    <div>
+        Synopsis : <InputTextArea @bind-Value="NewMovie.Synopsis" />
+        <ValidationMessage For="@(() => NewMovie.Synopsis)" />
+    </div>
+    <button type="submit" class="btn btn-success">Valider</button>
+    <ValidationSummary />
+</EditForm>

@@ -8,6 +8,7 @@ namespace Exercice2.Services
 
         internal void AddMovies(Movie movie)
         {
+            movie.Id = Movies.Count + 1;
             Movies.Add(movie);
         }
 

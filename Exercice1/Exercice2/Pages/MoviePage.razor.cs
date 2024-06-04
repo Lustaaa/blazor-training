@@ -17,7 +17,6 @@ namespace Exercice2.Pages
         {
             var movie = new Movie
             {
-                Id = 1,
                 Title = "MonTitre",
                 AnneeDeSortie = 2024,
                 Realisateur = "Wouam",
@@ -28,9 +27,15 @@ namespace Exercice2.Pages
             Movies = MovieService.GetAll();
         }
 
-        private void DisplayDetail(int id)
+        public void DisplayDetail(int id)
         {
             SelectedId = id;
+            StateHasChanged();
+        }
+
+        public void Refresh()
+        {
+            StateHasChanged();
         }
     }
 }
