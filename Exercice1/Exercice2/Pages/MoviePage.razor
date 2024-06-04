@@ -1,0 +1,20 @@
+﻿@page "/movie"
+<h3>MoviePage</h3>
+
+<div>
+    <h4>Ma liste de film</h4>
+    <ul>
+    @foreach (var movie in Movies)
+    {
+        <li>
+            <p>@movie.Title - @movie.AnneeDeSortie - <button onclick="@(() => DisplayDetail(movie.Id))" >Détail</button></p>
+        </li>
+    }
+    </ul>
+
+    <p>Selected Id : @SelectedId</p>
+</div>
+
+<div>
+    <DetailMovie MovieId="@SelectedId" />
+</div>
